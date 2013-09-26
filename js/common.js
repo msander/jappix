@@ -215,12 +215,12 @@ function getXID() {
 // Generates the colors for a given user XID
 function generateColor(xid) {
 	var colors = new Array(
-			'ac0000',
-			'a66200',
-			'007703',
-			'00705f',
-			'00236b',
-			'4e005c'
+			'0E53A7',
+			'00A08A',
+			'00BB3F',
+			'ABF000',
+			'FFFA00',
+			'FF2800'
 		     );
 	
 	var number = 0;
