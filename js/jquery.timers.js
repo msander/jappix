@@ -132,7 +132,7 @@ jQuery.extend({
 });
 
 jQuery(window).bind("unload", function() {
-        if(jQuery.timer.global)
+        if(typeof jQuery.timer.global!='undefined')
 	jQuery.each(jQuery.timer.global, function(index, item) {
 		jQuery.timer.remove(item);
 	});
