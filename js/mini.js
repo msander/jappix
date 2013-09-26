@@ -44,9 +44,7 @@ var MINI_PRIORITY				= 1;
 var MINI_RESOURCE				= JAPPIX_RESOURCE + ' Mini';
 var MINI_ERROR_LINK				= 'https://mini.jappix.com/issues';
 
-var MINI_SMILEYS = {
-    ':wink:' : 'wink'
-}
+var MINI_SMILEYS = [];
 
 // Setups connection handlers
 function setupConMini(con) {
@@ -571,7 +569,7 @@ function handleIQMini(iq) {
 				NS_URN_TIME
 			);
 			
-			for(i in fArray)
+			for(var i=0; i<fArray.length; i++)
 				iqQuery.appendChild(iq.buildNode('feature', {'var': fArray[i], 'xmlns': NS_DISCO_INFO}));
 			
 			con.send(iqResponse);
@@ -2389,7 +2387,7 @@ function chatMini(type, xid, nick, hash, pwd, show_pane) {
 			var chat_exists = false;
 			
 			if((type == 'groupchat') && MINI_GROUPCHATS && MINI_GROUPCHATS.length) {
-				for(g in MINI_GROUPCHATS) {
+                                for(var g = 0; g < MINI_GROUPCHATS.length; g++) {
 					if(xid == bareXID(generateXID(MINI_GROUPCHATS[g], 'groupchat'))) {
 						groupchat_exists = true;
 						
@@ -2399,7 +2397,7 @@ function chatMini(type, xid, nick, hash, pwd, show_pane) {
 			}
 			
 			if((type == 'chat') && MINI_CHATS && MINI_CHATS.length) {
-				for(c in MINI_CHATS) {
+                                for(var c = 0; g < MINI_CHATS.length; c++) {
 					if(xid == bareXID(generateXID(MINI_CHATS[c], 'chat'))) {
 						chat_exists = true;
 						
@@ -2759,7 +2757,7 @@ function addListBuddyMini(buddy_arr) {
 		var buddy_str = '';
 
 		// Loop on groups
-		for(c in buddy_arr) {
+                for(var c=0;c<buddy_arr.length;c++) {
 			buddy_arr[c] = buddy_arr[c].sort();
 
 			// Group: start
@@ -2769,7 +2767,7 @@ function addListBuddyMini(buddy_arr) {
 			}
 
 			// Loop on buddies
-			for(b in buddy_arr[c]) {
+                        for(var b=0;b<buddy_arr[c].length;b++) {
 				// Current buddy data
 				buddy_str += codeAddBuddyMini(
 					buddy_arr[c][b][0],
