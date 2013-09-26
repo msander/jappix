@@ -215,7 +215,7 @@ function getXID() {
 // Generates the colors for a given user XID
 function generateColor(xid) {
 	var colors = new Array(
-			'AD66D5',
+			'e0cee0',
 			'00A08A',
 			'00BB3F',
 			'ABF000',
