@@ -2124,7 +2124,7 @@ function displayMessageMini(type, body, xid, nick, hash, time, stamp, message_ty
                 
                 //Custom Smileys
                 jQuery.each(MINI_SMILEYS,function(i,smiley) {
-                    body = body.replace(smiley.pattern, smileyMini(smiley.name, '<img class="jm_smiley jm_smiley-' + smiley.alt + ' jm_images" alt="' + encodeQuotes(smiley.alt) + '" src="' + smiley.src + '" />'));
+                    body = body.replace(smiley.pattern, '<img class="jm_smiley jm_smiley-' + smiley.alt + ' jm_images" alt="' + encodeQuotes(smiley.alt) + '" src="' + smiley.src + '" />');
                 });
 		
                 //Default Smileys
