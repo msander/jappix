@@ -132,8 +132,8 @@ jQuery.extend({
 });
 
 jQuery(window).bind("unload", function() {
-        if(typeof jQuery.timer.global!='undefined')
-	jQuery.each(jQuery.timer.global, function(index, item) {
-		jQuery.timer.remove(item);
-	});
+        if(typeof jQuery.timer!='undefined' && typeof jQuery.timer.global!='undefined')
+            jQuery.each(jQuery.timer.global, function(index, item) {
+                    jQuery.timer.remove(item);
+            });
 });
