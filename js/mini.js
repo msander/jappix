@@ -44,6 +44,10 @@ var MINI_PRIORITY				= 1;
 var MINI_RESOURCE				= JAPPIX_RESOURCE + ' Mini';
 var MINI_ERROR_LINK				= 'https://mini.jappix.com/issues';
 
+var MINI_SMILEYS = {
+    ':wink:' : 'wink'
+}
+
 // Setups connection handlers
 function setupConMini(con) {
 	try {
@@ -2119,7 +2123,14 @@ function displayMessageMini(type, body, xid, nick, hash, time, stamp, message_ty
 		body = body.htmlEnc();
 		
 		// Apply the smileys
-		body = body.replace(/(;-?\))(\s|$)/gi, smileyMini('wink', '$1'))
+                
+                //Custom Smileys
+                jQuery.each(MINI_SMILEYS,function(i,smiley) {
+                    body = body.replace(smiley.pattern, smileyMini(smiley.name, '<img class="jm_smiley jm_smiley-' + smiley.alt + ' jm_images" alt="' + encodeQuotes(smiley.alt) + '" src="' + smiley.src + '" />'));
+                });
+		
+                //Default Smileys
+                body = body.replace(/(;-?\))(\s|$)/gi, smileyMini('wink', '$1'))
 		           .replace(/(:-?3)(\s|$)/gi, smileyMini('waii', '$1'))
 		           .replace(/(:-?\()(\s|$)/gi, smileyMini('unhappy', '$1'))
 		           .replace(/(:-?P)(\s|$)/gi, smileyMini('tongue', '$1'))
