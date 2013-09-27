@@ -222,7 +222,7 @@ function generateColor(xid) {
 			'FFFA00',
 			'FF2800'
 		     );*/
-        return "#FFFFFF";
+        return "#660000";
 	
 	var number = 0;
 	
