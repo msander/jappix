@@ -1420,6 +1420,12 @@ function createMini(domain, user, password) {
 			// Marker
 			suspended = true;
 			MINI_ROSTER_INIT = true;
+                        
+                        for(var g = 0; g < MINI_GROUPCHATS.length; g++) {
+                                var xid = bareXID(generateXID(MINI_GROUPCHATS[g], 'groupchat'));
+                                var pwd =  MINI_PASSWORDS[g];
+                                presenceMini('', '', '', '', xid + '/' + MINI_NICKNAME, pwd, true, handleMUCMini);
+                        }
 		}
 		
 		// New DOM?
