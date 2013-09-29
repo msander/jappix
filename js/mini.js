@@ -1426,6 +1426,9 @@ function createMini(domain, user, password) {
                                 var pwd =  MINI_PASSWORDS[g];
                                 presenceMini('', '', '', '', xid + '/' + MINI_NICKNAME, pwd, true, handleMUCMini);
                         }
+                        
+                        getRosterMini();
+                        
 		}
 		
 		// New DOM?
